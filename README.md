@@ -20,8 +20,28 @@ I decided to use data representing the current New York Jets roster. I implement
 * GET host:port/players/{id}
   * Returns a single player's info, including, id, first name, last name, position, jersey number, birth date, weight, height, birth place, college, college conference, and rookie year.
 
-## Install
+## Required Software
 
+Prior to downloading the software, you'll need the following software:
+* Git Bash 
+  * Used to download the code from github. This is optional, as you can just download the zip file. 
+* Docker
+  * Used to run the code. 
+
+## Set up
+
+Use git to clone the project or download the zip and explode it to the file system.
+
+Use gradle to build the jar and generate a docker container by running this command at the command line in the root of the project:
+...
+./gradlew build docker
+...
 
 ## Run in Docker
 
+To run the code in the Docker container, run this command at the command line in the root of the project:
+...
+docker run -p 8080:8080 -p 5005:5005 -t springio/gs-spring-boot-docker
+...
+
+You can now  use a browser to query from the endpoints.
